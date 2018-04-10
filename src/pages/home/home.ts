@@ -19,7 +19,17 @@ export class HomePage {
 
   }
 
-  
+  constructor(public alertCtrl: AlertController) {
+
+  }
+presentAlert() {
+        let alert = this.alertCtrl.create({
+          title: 'Camera',
+          buttons: ['Dismiss']
+        });
+        alert.present();
+      }
+
   takePicture() {
     console.log("Camera Clicked");
 
@@ -50,13 +60,7 @@ export class HomePage {
       // If it's base64:
       let base64Image = 'data:image/jpeg;base64,' + imageData;
       console.log(base64Image);
-      presentAlert(){
-	  	let alert = this.alertCtrl.create({
-	    title: 'Camera',
-	    buttons: ['Dismiss']
-	  });
-	  alert.present();
-	  }
+      presentAlert();
     }, (err) => {
       // Handle error
     });

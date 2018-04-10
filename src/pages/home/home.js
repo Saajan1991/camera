@@ -19,6 +19,10 @@ export class HomePage {
 
   }
 
+  constructor(private alertCtrl: AlertController) {
+
+  }
+
 
   takePicture() {
     console.log("Camera Clicked");
